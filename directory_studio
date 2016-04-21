@@ -1,0 +1,12 @@
+#!/bin/bash
+
+docker run -ti \
+           -e DISPLAY=$DISPLAY \
+           -v /tmp/.X11-unix:/tmp/.X11-unix \
+           -v /opt/workspaces/projects:/projects:rw \
+           -v /opt/workspaces/grails3:/home/developer/workspace:rw \
+           -v `echo $HOME`/.gradle:/home/developer/.gradle \
+           -v `echo $HOME`/.m2:/home/developer/.m2 \
+           --name directory_studio \
+           vintec/eclipse_directory_studio:2.0.0.v20151221-M10
+
